@@ -1981,3 +1981,6 @@ let server = Http.createServer((request, response) => {
 })
 
 server.listen(3000, () => console.log('Server 3000 portda ishlayapdi'))
+
+
+
