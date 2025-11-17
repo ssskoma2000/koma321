@@ -1226,618 +1226,316 @@
 //   }
 // }
 
-// class Bola extends Hayot {
-//   oki() {
-//     console.log(this.ism, "kitob okiyapti")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 1️⃣ Meros olish (extends) — Bola va Hayot
+// // 1) Meros olish
+
+// class Hayot {
+//   constructor(ism) {
+//     this.ism = ism
+//   }
+
+//   yashayapti() {
+//     console.log(this.ism, "yashayapti")
 //   }
 // }
 
-// let talb = new Bola("Bekzod")
-// talb.yashayapti()
-// talb.
+// class Bola extends Hayot {
+//   oki() {
+//     console.log(this.ism, "kitob o‘qiyapti")
+//   }
+// }
 
-// class BankAcount {
-//     #balans = 0
-//     constructor(boshlangich = 0) {
-//         this.#balans = boshlangich
+// let talaba = new Bola("Bekzod")
+// talaba.yashayapti()
+// talaba.oki()
+
+// 2️⃣ BankAccount — Obyekt, private field, depozit/yech
+// // 2) BankAccount
+
+// class BankAccount {
+//   #balans = 0
+
+//   constructor(boshlangich = 0) {
+//     this.#balans = boshlangich
+//   }
+
+//   depozit(sum) {
+//     if (sum > 0) {
+//       this.#balans += sum
+//       console.log(sum, "qo‘shildi")
 //     }
+//   }
 
-//      depozit(otkr) {
-//         if (otkr > 0) {
-//             this.#balans += otkr
-//             console.log("qoshildi", otkr)
-//         }
+//   yech(sum) {
+//     if (sum > 0 && this.#balans >= sum) {
+//       this.#balans -= sum
+//       console.log(sum, "yechildi")
+//     } else {
+//       console.log("Pul yetarli emas!")
 //     }
+//   }
 
-//     yech(otkr) {
-//         if (otkr > 0 && this.#balans >= otkr) {
-//             this.#balans -= otkr
-//             console.log("yechildi", otkr)
-//         } else {
-//             console.log("pul yetarli emas")
-//         }
-//     }
+//   getBalans() {
+//     return this.#balans
+//   }
+// }
 
-//      getbalans() {
-//         return this.#balans
-//     }
-// // }
-
-// let hisob = new BankAcount(100)
+// let hisob = new BankAccount(100)
 // hisob.depozit(50)
-// console.log("balans", hisob.getbalans())
+// console.log(hisob.getBalans())
 // hisob.yech(30)
-// console.log("balans", hisob.getbalans())
+// console.log(hisob.getBalans())
 // hisob.yech(200)
-// console.log("balans", hisob.getbalans())
+// console.log(hisob.getBalans())
+
+// 3️⃣ OvqatAparat — Private metodlar
+// // 3) Ovqat aparat
 
 // class OvqatAparat {
 //   #addGosh() {
-//     console.log("gosh qoshildii")
+//     console.log("Go‘sht qo‘shildi")
 //   }
 
 //   #addSuv() {
-//     console.log("suv qoshildi")
+//     console.log("Suv qo‘shildi")
 //   }
 
 //   #addMakaron() {
-//     console.log("makaron qoshildi")
+//     console.log("Makaron qo‘shildi")
 //   }
 
 //   #addTuz() {
-//     console.log("tuz qoshildi")
+//     console.log("Tuz qo‘shildi")
 //   }
 
 //   tayyorla() {
-//     console.log("ovqat tayyorlanmoqda")
-//     this.addGosh()
-//     this.addSuv()
-//     this.addMakaron()
-//     this.addTuz()
-//     console.log("ovqat tayyor")
+//     console.log("Ovqat tayyorlanmoqda...")
+//     this.#addGosh()
+//     this.#addSuv()
+//     this.#addMakaron()
+//     this.#addTuz()
+//     console.log("Ovqat tayyor!")
 //   }
 // }
 
 // let aparat = new OvqatAparat()
-// aparat.addGosh()    
-// aparat.tayyorla() 
+// aparat.tayyorla()
 
-
+// 4️⃣ Paynet — yashirin jarayon
+// // 4) Paynet
 
 // class Paynet {
-//     constructor() {
-//         this.balance = 0
-//     }
+//   constructor() {
+//     this.balance = 0
+//   }
 
-//     addMoney(sum) {
-//         this.#jarayon()
-//         this.balance += sum
-//         console.log("Pul o'tdi Jami balans:", this.balance)
-//     }
-//     #jarayon() {
-//         console.log("Pul tolash boshlandi...")
-//         console.log("Pul tushyapti...")
-//     }
-//     getPayment() {
-//         console.log("Jami pulingiz:", this.balance)
-//     }
+//   addMoney(sum) {
+//     this.#jarayon()
+//     this.balance += sum
+//     console.log("Pul o'tdi. Balans:", this.balance)
+//   }
+
+//   #jarayon() {
+//     console.log("Jarayon boshlandi...")
+//     console.log("Pul tushyapti...")
+//   }
+
+//   getPayment() {
+//     console.log("Jami pul:", this.balance)
+//   }
 // }
 
 // let pay = new Paynet()
 // pay.addMoney(10000)
 // pay.getPayment()
 
-
-
-
-
-// try {
-//     print("otkury")
-// } catch (error) {
-//     console.log(error.message)
-//
+// 5️⃣ Try–Catch — Xatolarni tutish
+// 5.1 foydalanuvchi ismi
+// // 5.1) Error bilan ishlash
 
 // function foydalanuvchiIsmi(ism) {
 //   try {
-//     if (!ism) throw new Error ("Ism kiritish majburiy")
-//     console.log("odam ismi:", ism)
+//     if (!ism) throw new Error("Ism majburiy!")
+//     console.log("Ism:", ism)
 //   } catch (xato) {
-//     console.log("Xato:", xato)
+//     console.log("Xato:", xato.message)
 //   } finally {
-//     console.log(" tugadi")
+//     console.log("Tugadi\n")
 //   }
 // }
 
 // foydalanuvchiIsmi("Javohir")
 // foydalanuvchiIsmi()
 
-
-
-// b blan a bolnuv ishi
+// 5.2 bo‘lish funksiyasi
+// // 5.2) Bo‘lish
 
 // function bolish(a, b) {
 //   try {
-//     if (b === 0) throw new Error("b nol bolishi mumkin emas");
-//     console.log( a / b);
+//     if (b === 0) throw new Error("0 ga bo‘linmaydi!")
+//     console.log(a / b)
 //   } catch (xato) {
-//     console.log("Xato:", xato.message);
+//     console.log("Xato:", xato.message)
 //   }
 // }
 
-// bolish(24, 0);
-// // bolish(24, 3);
+// bolish(24, 0)
 
+// 6️⃣ CustomError, parol tekshirish, balansdan pul yechish
+// // 6) MyCustomError
 
-// class BankAcount {
-//   3
-// }
-
-// class Akkaunt {
-//   #balans = 1000
-
-//   withdraw(summa) {
-//     try {
-//       if (summa > this.#balans) throw new Error("pul yetarli emas")
-//       this.#balans -= summa
-//       console.log(" yechildi:", summa)
-//     } catch (xato) {
-//       console.log( xato.message)
-//     } finally {
-//       console.log(" ish tugadi balans:", this.#balans)
-//     }
-//   }
-// }
-
-// let acc = new Akkaunt()
-// acc.withdraw(500)
-// acc.withdraw(600)
-
-
-// // O'z xato klassimiz
 // class MyCustomError extends Error {
 //   constructor(message) {
-//     super(message);
-//     this.name = "MyCustomError";
+//     super(message)
+//     this.name = "MyCustomError"
 //   }
 // }
 
 // class Account {
-//   #balance = 1000;
-//   #password = 1111;
+//   #balance = 1000
+//   #password = 1111
 
 //   checkPassword(input) {
 //     if (input !== this.#password) {
-//       throw new MyCustomError("Parol noto‘g‘ri!");
+//       throw new MyCustomError("Parol noto‘g‘ri!")
 //     }
 //   }
 
-//   withdraw(summa, inputPassword) {
+//   withdraw(sum, pass) {
 //     try {
-//       this.checkPassword(inputPassword);
+//       this.checkPassword(pass)
 
-//       if (summa <= 0) {
-//         throw new MyCustomError("Yechiladigan summa 0 yoki manfiy bolmasin!");
-//       }
+//       if (sum <= 0) throw new MyCustomError("Noto‘g‘ri summa")
+//       if (sum > this.#balance) throw new MyCustomError("Pul yetarli emas")
 
-//       if (summa > this.#balance) {
-//         throw new MyCustomError("Mablag yetarli emas");
-//       }
-
-//       this.#balance -= summa;
-//       console.log(`yechildi: ${summa} so‘m`);
-//       console.log(`Qolgan balans: ${this.#balance} som`);
-//     } 
-//     catch (xato) {
-//       console.log("Xato:", xato.message);
-//     } 
-//     finally {
-//       console.log("hato.\n");
+//       this.#balance -= sum
+//       console.log("yechildi:", sum)
+//       console.log("qolgan balans:", this.#balance)
+//     } catch (xato) {
+//       console.log("Xato:", xato.message)
+//     } finally {
+//       console.log("Jarayon tugadi.\n")
 //     }
 //   }
 // }
 
+// let user = new Account()
+// user.withdraw(500, 1111)
+// user.withdraw(2000, 1111)
+// user.withdraw(100, 1234)
+// user.withdraw(-50, 1111)
 
-// takeCard() 
-//   this.#isCheced = false
-
-// // Sinov
-// const user = new Account();
-
-// user.withdraw(500, 1111); 
-// user.withdraw(2000, 1111); 
-// user.withdraw(100, 1234); 
-// user.withdraw(-50, 1111); 
-
-
-
-
-// // class Robot {
-// //   constructor() {
-// //     this.zaryad = 50
-// //   }
-
-// //   start(soat) {
-// //     try {
-// //       if (soat <= 0) throw new Error("bolishi mumkin emas")
-// //       let kerakliZaryad = soat * 10
-
-// //       if (kerakliZaryad > this.zaryad) {
-// //         throw new Error("Zaryad yetarli emas Hozirgi zaryad: " + this.zaryad + "%, kerakli: " + kerakliZaryad + "%")
-// //       } else {
-// //         this.zaryad -= kerakliZaryad
-// //         console.log("Robot " + soat + " soat ishladi. Qolgan zaryad: " + this.zaryad + "%")
-// //       }
-// //     } catch (xato) {
-// //       console.log("Xato:", xato.message)
-// //     } finally {
-// //       console.log("yakunlandi.\n")
-// //     }
-// //   }
-
-// //   checkBattery() {
-// //     console.log("Hozirgi zaryad: " + this.zaryad + "%")
-// //   }
-
-// //   zaryadHam(qosh) {
-// //     if (qosh > 0) {
-// //       this.zaryad += qosh
-// //       if (this.zaryad > 100) this.zaryad = 100
-// //       console.log("Zaryad toldirildi. zaryad: " + this.zaryad + "%")
-// //     } else {
-// //       console.log("Notogri qiymat ")
-// //     }
-// //   }
-// // }
-
-// // let r1 = new Robot()
-// // r1.checkBattery()
-// // r1.start(3)
-// // r1.zaryadHam(30)
-// // r1.start(6)
-// // r1.start(2)
-// // r1.zaryadHam(-5)
+// 7️⃣ Promise — random raqam
+// // 7) Random raqam
 
 // let randomRaqam = new Promise((resolve) => {
 //   setTimeout(() => {
-//     let son = Math.floor(Math.random() * 10); 
-//     resolve(son);
-//   }, 2000);
-// });
+//     resolve(Math.floor(Math.random() * 10))
+//   }, 2000)
+// })
 
-// randomRaqam.then((natija) => {
-//   console.log("random raqam:", natija);
-// });
+// randomRaqam.then(result => console.log("Random:", result))
 
+// 8️⃣ Promise — FizzBuzz
+// // 8) FizzBuzz
 
 // function fizzBuzz(n) {
-//     return new Promise((res, rej) => {
-//         if (n % 3 === 0 && n % 5 === 0) res("FizzBuzz")
-//         else if (n % 3 === 0) res("Fiz")
-//         else if (n % 5 === 0) res("Buz")
-//         else rej(" bu 3 tasiham emas")
-//     })
+//   return new Promise((res, rej) => {
+//     if (n % 3 === 0 && n % 5 === 0) res("FizzBuzz")
+//     else if (n % 3 === 0) res("Fizz")
+//     else if (n % 5 === 0) res("Buzz")
+//     else rej("Bu 3 tasidan emas")
+//   })
 // }
 
 // fizzBuzz(15).then(console.log).catch(console.error)
 // fizzBuzz(7).then(console.log).catch(console.error)
 
+// 9️⃣ Uchta Promise — ketma-ket bajarish
+// // 9) Ketma-ket promise
 
-
-
-
-
-
-// // 1-Promise: Salom
-// let salom = new Promise((resolve) => {
-//   setTimeout(() => {
-//     console.log("1-soniya otdi...");
-//     resolve("Salom");
-//   }, 1000);
-// });
-
-// // 2-Promise: Hello
-// let hello = new Promise((resolve) => {
-//   setTimeout(() => {
-//     console.log("2-soniya otdi...");
-//     resolve("Hello");
-//   }, 2000);
-// });
-
-// // 3-Promise: 3
-// let uch = new Promise((resolve) => {
-//   setTimeout(() => {
-//     console.log("3-soniya otdi...");
-//     resolve("3");
-//   }, 3000);
-// });
-
-// // Natijalarni chiqazish
-// salom.then((natija) => console.log("Natija:", natija));
-// hello.then((natija) => console.log("Natija:", natija));
-// uch.then((natija) => console.log("Natija:", natija));
-// let otkr1 = new Promise(resolve => setTimeout(() => resolve("as"), 1000))
-
-
-
-
-// function qadam1() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//             console.log("qadam 1 bajarild ");
-//             resolve("step 1 tugadi");
-//         }, 1000);
-//     });
-// }
-
-// function qadam2() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//             console.log("qadam 2 bajarild ");
-//             resolve("step 2 tugadi");
-//         }, 1500);
-//     });
-// }
-
-// function qadam3() {
-//     return new Promise((resolve) => {
-//         setTimeout(() => {
-//             console.log("qadam 3 bajarildi ");
-//             resolve("step 3 tugadi");
-//         }, 2000);
-//     });
-// }
-
-// qadam1()
-//     .then((natija) => {
-//         console.log(natija);
-//         return qadam2();
-//     })
-//     .then((natija) => {
-//         console.log(natija);
-//         return qadam3();
-//     })
-//     .then((natija) => console.log(natija, " Hammasi tugadi otkir hursand"))
-//     .catch((xato) => console.log("Xato:", xato));
-
-
-
-
-
-//     function kutish(soniya) {
-//   return new Promise((resolve) => {
+// function qadam(ms, text) {
+//   return new Promise(resolve => {
 //     setTimeout(() => {
-//       resolve(`Funksiya ${soniya} sekund ishladi`);
-//     }, soniya * 1000);
-//   });
-// }
-// kutish(3).then((natija) => console.log(natija));
-// kutish(10).then((natija) => console.log(natija));
-
-
-
-// function ishlash(otkir) {
-//     return new Promise(resolve => {
-//         let s = Math.floor(Math.random() * 9) + 1
-//         setTimeout(() => resolve(otkir + " " + s + " sekund ishladi"), s * 1000)
-//     })
-// }
-
-// ishlash("A")
-//     .then(function (res) {
-//         console.log(res)
-//         return ishlash("b")
-//     })
-//     .then(function (res) {
-//         console.log(res)
-//         return ishlash("d")
-//     })
-//     .then(function (res) {
-//         console.log(res)
-//     })
-
-
-// let a = new Promise(function(resolve) {
-//   let s = Math.floor(Math.random() * 9) + 1
-//   setTimeout(function() {
-//     resolve("A " + s + " sekund ishladi")
-//   }, s * 1000)
-// })
-
-// let b = new Promise(function(resolve) {
-//   let s = Math.floor(Math.random() * 9) + 1
-//   setTimeout(function() {
-//     resolve("B " + s + " sekund ishladi")
-//   }, s * 1000)
-// })
-
-// let d = new Promise(function(resolve) {
-//   let s = Math.floor(Math.random() * 9) + 1
-//   setTimeout(function() {
-//     resolve("D " + s + " sekund ishladi")
-//   }, s * 1000)
-// })
-
-// a.then(function(res) {
-//   console.log(res)
-//   return b
-// }).then(function(res) {
-//   console.log(res)
-//   return d
-// }).then(function(res) {
-//   console.log(res)
-// })
-
-// let son = 18
-// let tub = true
-
-// if (son <= 1) {\
-// Agar i soni j ga bo‘linsa,
-//  demak bu son tub emas.
-//   console.log("Tub mas")
-// } else if (son === 2) {
-//   console.log("ozdan kichik hamma songa bolinishini")
-// } else {
-//   for (let i = 2; i < son; i++) {
-//     if (son % i === 0) {
-//       tub = false
-//       break
-//     }
-//   }
-//   if (tub) {
-//     console.log("Tub ")
-//   } else {
-//     console.log("Tub mas")
-//   }
-// }
-
-
-
-
-// for (let i = 2; i <= 100; i++) {
-//   let tub = true
-
-//   for (let b = 2; b < i; b++) {
-//     if (i % b === 0) {
-//       tub = false
-//       break
-//     }
-//   }
-
-//   if (tub) {
-//     console.log(i)
-//   }
-// }
-
-
-// promis va awaint
-
-// async function run() {
-//     console.log("1");
-//     let res = await new Promise((resolve, reject) =>{
-//         setTimeout(() => {
-//             console.log("2");
-//             resolve("Togru")
-//             // reject("Xato")
-//         }, 2000)
-//     })
-//     console.log("3");
-
-// }
-// run()
-// function randomSon() {
-//     return new Promise((resolve, reject) => {
-//         let son = Math.floor(Math.random() * 10) + 1
-//         resolve(son)
-//     })
-// }
-
-// randomSon()
-//     .then(son => {
-//         console.log("1 natija:", son)
-//         return son + 10
-//     })
-//     .then(yangiSon => {
-//         console.log("2 natija:", yangiSon)
-//         return yangiSon * 2
-//     })
-//     .then(final => {
-//         console.log("yakuny:", final)
-//     })
-//     .catch(xato => {
-//         console.log("Xato:", xato,     Math.floor(Math.random() * 10) + to)
-//     })
-
-// Chain — bu bir nechta .then() ni ketma-ket ulash usuli.
-// U oldingi natijani keyingisiga uzatadi.
-
-// Promise.resolve(5)
-//   .then(x => x + 2)   // 5 + 2 = 7
-//   .then(x => x * 3)   // 7 * 3 = 21
-//   .then(x => console.log(x)) // 21
-//  Har bir .then() oldingi qiymatni olib keyingisiga beradi
-
-//  randomPromise = new Promise((resolve, reject) => {
-//     let son = Math.random()
-//     console.log("Tasodify son:", son)
-
-//     if (son > 0.5) {
-//         resolve("son 0.5 dan katta")
-//     } else {
-//         reject("  0.5 dan kichik")
-//     }
-// })
-
-// randomPromise
-//     .then(natija => console.log(natija))
-//     .catch(xato => console.log(xato))
-
-
-
-// let promise3 = new Promise((resolve, reject) => {
-//     Math.random() 0.5 ? resolve("success") :    rej("error")
-// })
-
-
-
-
-
-
-// let yoshTekshir = new Promise((resolve, reject) => {
-//   let yosh = (Math.random() )
-//   console.log("Yosh:", yosh)
-
-//   yosh >= 18 ? resolve("Voyaga yetgan") : reject("Voyaga yetmagan")
-// })
-
-// yoshTekshir
-//   .then(natija => console.log(natija))
-//   .catch(xato => console.log(xato))
-
-
-// function kvadrat(son) {
-//   return new Promise((resolve, reject) => {
-//     if (typeof son === "number") {
-//       resolve(son * son)
-//     }
+//       console.log(text)
+//       resolve(text + " tugadi")
+//     }, ms)
 //   })
 // }
 
-// async function callSquare() {
-//   try {
-//     let javob = await kvadrat(5)
-//     console.log("Kvadrat:", javob)
-//   } catch (xato) {
-//     console.log(xato)
-//   }
-// }
+// qadam(1000, "qadam 1")
+//   .then(() => qadam(1500, "qadam 2"))
+//   .then(() => qadam(2000, "qadam 3"))
+//   .then(() => console.log("Hammasi tugadi!"))
 
-// callSquare()
+// 🔟 Async/Await — login tizimi
+// // 10) Login
 
-
-
-
-
-// function fizzBuzz(son) {
-//     return new Promise((resolve, reject) => {
-//         if (son % 3 === 0 && son % 5 === 0) resolve("fizz buzz")
-//         else if (son % 3 === 0) resolve("Fizz")
-//         else if (son % 5 === 0) resolve("Buzz")
-//         else reject("error")
-//     })
-// }
-// async function ishgaTushur() {
-//     try {
-//         let natija = await fizzBuzz()
-//         console.log("natija:", natija)
-//     } catch (xato) {
-//         console.log(xato)
-//     }
-// }
-
-// ishgaTushur() 
-// async function login(user, pass) {
-//   return new Promise(function(resolve, reject) {
-//     setTimeout(function() {
+// function login(user, pass) {
+//   return new Promise((resolve, reject) => {
+//     setTimeout(() => {
 //       if (!user || !pass) return reject("Ism yoki parol kiritilmagan")
 
 //       let db = [
@@ -1845,22 +1543,16 @@
 //         { username: "otkir",   password: "2222" }
 //       ]
 
-//       for (let i = 0; i < db.length; i++) {
-//         if (db[i].username === user && db[i].password === pass) {
-//           return resolve("Kirdi")
-//         }
-//       }
-
-//       reject("Hato")
-//     }, 500) // 0.5s kechikish
+//       let ok = db.find(u => u.username === user && u.password === pass)
+//       ok ? resolve("Kirdi") : reject("Xato")
+//     }, 500)
 //   })
 // }
 
 // async function run() {
 //   try {
 //     let natija = await login("javohir", "1111")
-//     console.log(natija) // Kirdi
-//     // boshqa asinxron ishlar shu yerda davom etishi mumkin
+//     console.log(natija)
 //   } catch (xato) {
 //     console.log(xato)
 //   }
@@ -1868,119 +1560,64 @@
 
 // run()
 
-// extends bilan meros olamiz.
-
-
-// super(...) — ota konstruktori chaqiriladi.
-
-
-// Child klass ota metodini override qilishi mumkin.
-
-
-// Child oziga xos metodlar qoshishi ham mumkin.
 
 
 
-// let otkr1 = new Promise(resolve => setTimeout(() => resolve("bir"), 1000))
-// let otkr2 = new Promise(resolve => setTimeout(() => resolve("iki"), 1000))
-// let otkr3 = new Promise(resolve => setTimeout(() => resolve("uch "), 1000))
-// let otkr4 = new Promise(resolve => setTimeout(() => resolve("otkir happy "), 1000))
 
-// async function ishgaTushur() {
-//     let a = await otkr1
-//     console.log(a)
-//     let b = await otkr2
-//     console.log(b)
-//     let c = await otkr3
-//     console.log(c)
-//     let d = await otkr4
-//     console.log(d)
+
+// let sonlar = [1, 2, 3, 2, 4, 1, 2, 5, 1];
+// let hisob = {};
+// for (let son of sonlar) {
+//   hisob[son] = (hisob[son] || 0) + 1;
+// } bj/;;;;;;;;;;;l;;
+// for (let kalit in hisob) {
+//   if (hisob[kalit] === 1) delete hisob[kalit];
 // }
-// user Id
-// ishgaTushur()
-// async function aqlliOtkir() {
-//   return { id: 1, username: "Javohir" }
-// }
-
-// async function getOtkir(user) {
-//   console.log("ID:", user.id, "foydalanuvchi:", user.username)
-// }
-
-// async function run() {
-//   let user = await aqlliOtkir()
-//   await getOtkir(user)
-// }
-
-// run()
+// console.log(hisob);h
 
 
+// menga 
 
-// let { Maktab, findStudent } = require('./main')
 
-// let school = new Maktab('./data.json')
+// const express = require("express")
+// const app = express()
 
-// school.addStudent("Javohir", 20, "Erkak")
-// school.addStudent("Olim", 19, "Erkak")
+// const cars = [
+//   { id: 1, nom: "BMW", nomber: "01A777AA" },
+//   { id: 2, nom: "Mercedes", nomber: "01B999BB" },
+//   { id: 3, nom: "Cobalt", nomber: "01V123CD" }
+// ]
 
-// console.log(school.readStudents())
+// app.get("/", (req, res) => {
+//   res.send(cars)
+// })
 
-// findStudent("Javohir")
-let Http = require('http')
-let fs = require('fs')
 
-let server = Http.createServer((request, response) => {
-    if (request.url == '/users' && request.method == 'GET') {
-        let users = fs.readFileSync('./users.json', 'utf-8')
-        response.end(users)
-    } else if (request.url == '/cars' && request.method == 'GET') {
-        let cars = fs.readFileSync('./cars.json', 'utf-8')
-        response.end(cars)
-    } else if (request.url == '/users' && request.method == 'POST') {
-        let body = ''
-        request.on('data', (chunk) => {
-            body += chunk
-        })
-        request.on('end', () => {
-            let chunk = JSON.parse(body)
-            let users = fs.readFileSync('./users.json', 'utf-8')
-            users = users ? JSON.parse(users) : []
-            let found = users.find(el => el.name == chunk.name)
-            if (found) return response.end('Bu user mavjud')
-            users.push(chunk)
-            fs.writeFileSync('./users.json', JSON.stringify(users, null, 4))
-            response.end(
-                JSON.stringify({
-                    xabar: 'User saqlandi',
-                    users,
-                })
-            )
-        })
-    } else if (request.url == '/cars' && request.method == 'POST') {
-        let body = ''
-        request.on('data', (chunk) => {
-            body += chunk
-        })
-        request.on('end', () => {
-            let data = JSON.parse(body)
-            let cars = fs.readFileSync('./cars.json', 'utf-8')
-            cars = cars ? JSON.parse(cars) : []
-            let found_car = cars.find(el => el.model == data.model)
-            if (found_car) return response.end('Bu mashina mavjud')
-            cars.push(data)
-            fs.writeFileSync('./cars.json', JSON.stringify(cars, null, 4))
-            response.end(
-                JSON.stringify({
-                    xabar: 'Car saqlandi',
-                    cars,
-                })
-            )
-        })
-    } else {
-        response.end('Serverga xush kelibsiz')
-    }
+const express = require("express")
+const app = express()
+
+let users = [
+  { id: 1, ism: "javohir", yosh: 20 },
+  { id: 2, ism: "otkir", yosh: 22 },
+  { id: 3, ism: "ali", yosh: 19 }
+]
+
+app.get("/:id", (req, res) => {
+  let userId = Number(req.params.id)
+  let topildi = users.find(el => el.id === userId)
+  res.send(topildi)
 })
 
-server.listen(3000, () => console.log('Server 3000 portda ishlayapdi'))
+app.listen(3000)
 
+
+
+
+// app.get('/', (req, res) => {
+//     res.end('salom xush kelipsiz')
+
+// })
+
+// app.get
 
 

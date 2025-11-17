@@ -1,0 +1,23 @@
+{
+  "name": "nj-darslar",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ssskoma2000/koma321.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ssskoma2000/koma321/issues"
+  },
+  "homepage": "https://github.com/ssskoma2000/koma321#readme",
+  "dependencies": {
+    "express": "^5.1.0"
+  }
+}

@@ -1,5 +1,6 @@
-{
-  "users": [
-    { "ism": "Javohir", "yosh": 22, "gender": "Erkak" },
-    { "ism": "Otkr", "yosh": 19, "gender": "Erkak" }
-  ]}
+[
+    {
+        "name": "name",
+        "password": "1234"
+    }
+]
